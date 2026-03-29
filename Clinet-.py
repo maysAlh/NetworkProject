@@ -32,9 +32,9 @@ text = res.decode()
 print("\n--- HTTP response ---")
 print(text[:500])
 
-if "Source: cache" in text:
+if "X-Proxy-Cache: HIT" in text:
     print("\nresponse from cache")
-elif "Source: server" in text:
+elif "X-Proxy-Cache: MISS" in text:
     print("\nresponse from server")
 else:
     print("\nresponse source not identified")
